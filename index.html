@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Keyboard Lock - Secure Your Mac's Input Devices | Free Mac App
+    </title>
+
+    <!-- Meta tags for SEO -->
+    <meta
+      name="description"
+      content="Keyboard Lock: Free Mac app to temporarily lock your keyboard, mouse, and trackpad. Enhance focus, prevent accidental inputs, and clean your device worry-free. Download now!"
+    />
+    <meta
+      name="keywords"
+      content="Keyboard Lock, Mac app, lock keyboard, lock mouse, lock trackpad, focus tool, productivity, device cleaning"
+    />
+    <meta name="author" content="Lin Chen" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://landon2022.github.io/keyboardlock.website/"
+    />
+    <meta
+      property="og:title"
+      content="Keyboard Lock - Secure Your Mac's Input Devices | Free App"
+    />
+    <meta
+      property="og:description"
+      content="Free Mac app to lock your keyboard and mouse. Enhance focus, prevent accidental inputs, and clean your device worry-free. Download now!"
+    />
+    <meta
+      property="og:image"
+      content="https://landon2022.github.io/keyboardlock.website/app-icon-url.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:url"
+      content="https://landon2022.github.io/keyboardlock.website/"
+    />
+    <meta
+      property="twitter:title"
+      content="Keyboard Lock - Secure Your Mac's Input Devices | Free App"
+    />
+    <meta
+      property="twitter:description"
+      content="Free Mac app to lock your keyboard and mouse. Enhance focus, prevent accidental inputs, and clean your device worry-free. Download now!"
+    />
+    <meta
+      property="twitter:image"
+      content="https://landon2022.github.io/keyboardlock.website/app-icon-url.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- Apple-specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Keyboard Lock" />
+
+    <style>
+      :root {
+        --primary-color: #1a3c5e;
+        --secondary-color: #e6eef5;
+        --text-color: #333333;
+        --light-text-color: #ffffff;
+        --accent-color: #4a7ba6;
+        --success-color: #28a745;
+      }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--secondary-color);
+      }
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      header {
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
+        padding: 3rem 0;
+        text-align: center;
+      }
+      .app-icon {
+        width: 128px;
+        height: 128px;
+        border-radius: 22px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+      h1,
+      h2 {
+        color: var(--primary-color);
+        margin-bottom: 1.5rem;
+      }
+      header h1 {
+        color: var(--light-text-color);
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+      header p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      p {
+        margin-bottom: 1.5rem;
+      }
+      .cta-button {
+        display: inline-block;
+        background-color: var(--success-color);
+        color: var(--light-text-color);
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: 1.1rem;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      .cta-button:hover {
+        background-color: #218838;
+        transform: translateY(-2px);
+      }
+      .features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 3rem;
+      }
+      .feature {
+        flex-basis: calc(50% - 1.5rem);
+        margin-bottom: 2.5rem;
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .feature:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+      .feature h3 {
+        color: var(--accent-color);
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+      main {
+        padding: 3rem 0;
+      }
+      .testimonial {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 3rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      .testimonial q {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #555;
+      }
+      .testimonial p {
+        margin-top: 1rem;
+        font-weight: bold;
+      }
+      footer {
+        background-color: var(--primary-color);
+        color: var(--light-text-color);
+        text-align: center;
+        padding: 2rem 0;
+        margin-top: 3rem;
+      }
+      @media (max-width: 768px) {
+        .feature {
+          flex-basis: 100%;
+        }
+        .container {
+          width: 95%;
+          padding: 0 15px;
+        }
+        header h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.7rem;
+        }
+      }
+      @media (max-width: 480px) {
+        .app-icon {
+          width: 96px;
+          height: 96px;
+        }
+        header h1 {
+          font-size: 1.8rem;
+        }
+        h2 {
+          font-size: 1.5rem;
+        }
+        .feature {
+          padding: 1.5rem;
+        }
+      }
+
+      .testimonial-carousel {
+        background-color: #ffffff;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 3rem;
+        text-align: center;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      .testimonial {
+        display: none;
+        animation: fadeEffect 0.5s;
+      }
+      .testimonial.active {
+        display: block;
+      }
+      .testimonial q {
+        font-style: italic;
+        font-size: 1.1rem;
+        color: #555;
+        display: block;
+        margin-bottom: 1rem;
+      }
+      .testimonial p {
+        font-weight: bold;
+      }
+      .carousel-controls {
+        margin-top: 1rem;
+      }
+      .carousel-btn {
+        background-color: var(--accent-color);
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+        margin: 0 0.25rem;
+      }
+      .carousel-btn:hover {
+        background-color: var(--primary-color);
+      }
+      .carousel-dots {
+        margin-top: 1rem;
+      }
+      .dot {
+        height: 10px;
+        width: 10px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .dot.active {
+        background-color: var(--accent-color);
+      }
+      @keyframes fadeEffect {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <img src="app-icon-url.png" alt="Keyboard Lock Icon" class="app-icon" />
+        <h1>Keyboard Lock</h1>
+        <p>Secure Your Mac's Keyboard and Mouse with One Click</p>
+        <a
+          href="https://apps.apple.com/us/app/keyboard-lock/id6596737187?mt=12"
+          class="cta-button"
+          >Download Free on App Store</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <section>
+          <h2>Enhance Your Mac Experience</h2>
+          <p>
+            Keyboard Lock is your ultimate solution for preventing accidental
+            inputs, maintaining focus, and cleaning your device worry-free.
+            Perfect for professionals, parents, and anyone who wants more
+            control over their Mac's input devices.
+          </p>
+        </section>
+
+        <section class="features">
+          <div class="feature">
+            <h3>One-Click Locking</h3>
+            <p>
+              Instantly secure your keyboard, mouse, and trackpad with a single
+              click. Regain control just as easily.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Quick Shortcut</h3>
+            <p>
+              Lock and unlock effortlessly using the convenient shortcut:
+              Command + Shift + Esc.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Avoid Interruption</h3>
+            <p>
+              Prevent accidental clciks during keyboard, screen cleaning, video
+              watching or important video call!
+            </p>
+          </div>
+          <div class="feature">
+            <h3>100% Free & Ad-Free</h3>
+            <p>
+              Enjoy a clean, interruption-free experience without any hidden
+              costs or annoying advertisements.
+            </p>
+          </div>
+        </section>
+
+        <div class="testimonial-carousel">
+          <div class="testimonial active">
+            <q
+              >Keyboard Lock has been a game-changer for my workflow. I can
+              finally clean my keyboard without worry!</q
+            >
+            <p>- Sarah T., Graphic Designer</p>
+          </div>
+          <div class="testimonial">
+            <q
+              >As a parent, this app is a lifesaver. No more accidental key
+              presses from my toddler during important video calls!</q
+            >
+            <p>- Mike R., Software Engineer</p>
+          </div>
+          <div class="testimonial">
+            <q
+              >Simple, effective, and free. Keyboard Lock is now an essential
+              part of my Mac setup.</q
+            >
+            <p>- Emily L., Content Creator</p>
+          </div>
+          <div class="carousel-controls">
+            <button class="carousel-btn prev-btn">&lt;</button>
+            <button class="carousel-btn play-pause-btn">Pause</button>
+            <button class="carousel-btn next-btn">&gt;</button>
+          </div>
+          <div class="carousel-dots"></div>
+        </div>
+        <section style="text-align: center; margin-top: 3rem">
+          <h2>Ready to Take Control?</h2>
+          <p>
+            Download Keyboard Lock now and experience a new level of input
+            device management on your Mac.
+          </p>
+          <a
+            href="https://apps.apple.com/us/app/keyboard-lock/id6596737187?mt=12"
+            class="cta-button"
+            >Get It Free on App Store</a
+          >
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Lin Chen. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        console.log("Keyboard Lock landing page loaded");
+
+        // Testimonial Carousel
+        const testimonials = document.querySelectorAll(".testimonial");
+        const prevBtn = document.querySelector(".prev-btn");
+        const nextBtn = document.querySelector(".next-btn");
+        const playPauseBtn = document.querySelector(".play-pause-btn");
+        const dotsContainer = document.querySelector(".carousel-dots");
+        let currentTestimonial = 0;
+        let isPlaying = true;
+        let intervalId;
+
+        function showTestimonial(index) {
+          testimonials.forEach((testimonial, i) => {
+            testimonial.classList.remove("active");
+            dots[i].classList.remove("active");
+          });
+          testimonials[index].classList.add("active");
+          dots[index].classList.add("active");
+        }
+
+        function nextTestimonial() {
+          currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+          showTestimonial(currentTestimonial);
+        }
+
+        function prevTestimonial() {
+          currentTestimonial =
+            (currentTestimonial - 1 + testimonials.length) %
+            testimonials.length;
+          showTestimonial(currentTestimonial);
+        }
+
+        function togglePlayPause() {
+          isPlaying = !isPlaying;
+          playPauseBtn.textContent = isPlaying ? "Pause" : "Play";
+          if (isPlaying) {
+            startCarousel();
+          } else {
+            stopCarousel();
+          }
+        }
+
+        function startCarousel() {
+          intervalId = setInterval(nextTestimonial, 5000);
+        }
+
+        function stopCarousel() {
+          clearInterval(intervalId);
+        }
+
+        // Create dots
+        testimonials.forEach((_, i) => {
+          const dot = document.createElement("span");
+          dot.classList.add("dot");
+          if (i === 0) dot.classList.add("active");
+          dot.addEventListener("click", () => {
+            currentTestimonial = i;
+            showTestimonial(currentTestimonial);
+            if (isPlaying) {
+              stopCarousel();
+              startCarousel();
+            }
+          });
+          dotsContainer.appendChild(dot);
+        });
+
+        const dots = document.querySelectorAll(".dot");
+
+        nextBtn.addEventListener("click", () => {
+          nextTestimonial();
+          if (isPlaying) {
+            stopCarousel();
+            startCarousel();
+          }
+        });
+
+        prevBtn.addEventListener("click", () => {
+          prevTestimonial();
+          if (isPlaying) {
+            stopCarousel();
+            startCarousel();
+          }
+        });
+
+        playPauseBtn.addEventListener("click", togglePlayPause);
+
+        // Start the carousel
+        startCarousel();
+      });
+    </script>
+  </body>
+</html>
